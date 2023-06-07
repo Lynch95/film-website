@@ -1,21 +1,23 @@
-import React, { useState } from "react";
-import ExpensesTable from "./components/ExpensesTable";
+import { Grid, GridItem } from "@chakra-ui/react";
 
 function App() {
-  const [expenses, setExpenses] = useState([
-    { id: 1, description: "gold", amount: 20, category: "metals" },
-    { id: 2, description: "silver", amount: 10, category: "metals" },
-    { id: 3, description: "bronze", amount: 5, category: "metals" },
-    { id: 4, description: "platinum", amount: 50, category: "metals" },
-  ]);
-
   return (
-    <div>
-      <ExpensesTable
-        expenses={expenses}
-        onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
-      />
-    </div>
+    <Grid
+      templateAreas={`"nav nav"
+                  "main main"
+                  "footer footer"`}
+      gridTemplateRows={"50px 1fr 30px"}
+      h='200px'>
+      <GridItem pl='2' bg='orange.300' area={"nav"}>
+        Nav
+      </GridItem>
+      <GridItem pl='2' bg='green.300' area={"main"}>
+        Main
+      </GridItem>
+      <GridItem pl='2' bg='blue.300' area={"footer"}>
+        Footer
+      </GridItem>
+    </Grid>
   );
 }
 
