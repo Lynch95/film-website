@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 
 interface Expense {
   id: number;
@@ -9,9 +10,10 @@ interface Expense {
 
 interface Props {
   expenses: Expense[];
+  onDelete: (id: number) => void;
 }
 
-const ExpensesTable = ({ expenses }: Props) => {
+const ExpensesTable = ({ expenses, onDelete }: Props) => {
   return (
     <table className='table table-bordered'>
       <thead>
@@ -28,10 +30,28 @@ const ExpensesTable = ({ expenses }: Props) => {
             <td>{expense.description}</td>
             <td>{expense.amount}</td>
             <td>{expense.category}</td>
-            <td></td>
+            <td>
+              <button
+                className='btn btn-danger'
+                onClick={() => onDelete(expense.id)}>
+                Delete
+              </button>
+            </td>
           </tr>
         ))}
       </tbody>
+      <tfoot>
+        <tr></tr>
+        <td>Total</td>
+        <td>
+          £
+          {expenses
+            .reduce((acc, expense) => expense.amount + acc, 0)
+            .toFixed(2)}
+        </td>
+        <td></td>
+        <td></td>
+      </tfoot>
     </table>
   );
 };

@@ -11,7 +11,10 @@ function App() {
 
   return (
     <div>
-      <ExpensesTable expenses={expenses} />
+      <ExpensesTable
+        expenses={expenses}
+        onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
+      />
     </div>
   );
 }
