@@ -1,16 +1,28 @@
-import { Container, Image, Box } from "@chakra-ui/react";
+import { Container, Image, Box, Text, Center } from "@chakra-ui/react";
 
 const HeroImage = () => {
   return (
-    <Container h='100%' maxW='100%'>
+    <Container h='100%' maxW='100%' position='relative'>
       <Box h='100%' w='100%'>
         <Image
           src='./src/images/aaron.jpg'
-          alt='Descriptive alt text' // remember to provide alt text for accessibility
+          alt='Descriptive alt text'
           objectFit='cover'
           h='100%'
           w='100%'
         />
+        <Center
+          position='absolute'
+          top='0'
+          right='0'
+          bottom='0'
+          left='500'
+          zIndex='1'>
+          <Text color='white' fontSize='xl'>
+            Black Mirror season 6 coming on the 15th June!
+            <p>Scroll down for more info...</p>
+          </Text>
+        </Center>
       </Box>
     </Container>
   );
