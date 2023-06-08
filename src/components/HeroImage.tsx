@@ -1,4 +1,5 @@
 import { Container, Image, Box, Text, Center } from "@chakra-ui/react";
+import { Button } from "react-bootstrap";
 
 const HeroImage = () => {
   return (
@@ -20,7 +21,16 @@ const HeroImage = () => {
           zIndex='1'>
           <Text color='white' fontSize='xl'>
             Black Mirror season 6 coming on the 15th June!
-            <p>Scroll down for more info...</p>
+            <p></p>
+            <Box
+              as='button'
+              borderRadius='md'
+              bg='tomato'
+              color='white'
+              px={2}
+              h={10}>
+              Find out more
+            </Box>
           </Text>
         </Center>
       </Box>
