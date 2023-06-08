@@ -1,5 +1,4 @@
 import { Container, Image, Box, Text, Center } from "@chakra-ui/react";
-import { Button } from "react-bootstrap";
 
 const HeroImage = () => {
   return (

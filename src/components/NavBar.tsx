@@ -3,10 +3,14 @@ import ColorModeSwitch from "./ColorModeSwitch";
 
 const NavBar = () => {
   return (
-    <HStack justifyContent='space-between' padding='10px' fontWeight='bold'>
+    <HStack
+      justifyContent='space-between'
+      padding='10px'
+      fontWeight='bold'
+      bg='blackAlpha.800'>
       <Link href='#'>Home</Link>
-      <Link href='#'>Reviews</Link>
-      <Link href='#'>Coming Soon</Link>
+      <Link href='Reviews'>Reviews</Link>
+      <Link href='ComingSoon'>Coming Soon</Link>
       <ColorModeSwitch />
     </HStack>
   );

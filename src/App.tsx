@@ -7,48 +7,25 @@ import {
 
 // layouts and pages
 import RootLayout from "./layouts/RootLayout";
-import Dashboard from "./pages/Dashboard";
-import Create from "./pages/Create";
-import Profile from "./pages/Profile";
+import Home from "./pages/Home";
+import Reviews from "./pages/Reviews";
+import ComingSoon from "./pages/ComingSoon";
 
 // router and routes
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<RootLayout />}>
-      <Route index element={<Dashboard />} />
-      <Route path='create' element={<Create />} />
-      <Route path='profile' element={<Profile />} />
+      <Route index element={<Home />} />
+      <Route path='Reviews' element={<Reviews />} />
+      <Route path='ComingSoon' element={<ComingSoon />} />
     </Route>,
   ),
 );
-
-import { Grid, GridItem } from "@chakra-ui/react";
-import NavBar from "./components/NavBar";
-
-import HeroImage from "./components/HeroImage";
 
 function App() {
   return (
     <>
       <RouterProvider router={router} />
-      <Grid
-        templateAreas={`"nav nav"
-                  "hero hero"
-                  "content content"
-                  "footer footer"`}>
-        <GridItem pl='2' bg='orange.300' area={"nav"}>
-          <NavBar />
-        </GridItem>
-        <GridItem pl='2' area={"hero"}>
-          <HeroImage />
-        </GridItem>
-        <GridItem pl='2' bg='gold' area={"content"}>
-          content
-        </GridItem>
-        <GridItem pl='2' bg='blue.300' area={"footer"}>
-          footer
-        </GridItem>
-      </Grid>
     </>
   );
 }
