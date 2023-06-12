@@ -8,7 +8,7 @@ const NavBar = () => {
       padding='10px'
       fontWeight='bold'
       bg='blackAlpha.800'>
-      <Link href='#'>Home</Link>
+      <Link href='/'>Home</Link>
       <Link href='Reviews'>Reviews</Link>
       <Link href='ComingSoon'>Coming Soon</Link>
       <ColorModeSwitch />
