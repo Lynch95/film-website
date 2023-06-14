@@ -13,21 +13,22 @@ const HeroImage = () => {
         />
         <Center
           position='absolute'
-          top='0'
+          top={["70%", "10%", "5%", "0"]}
           right='0'
           bottom='0'
-          left='500'
-          zIndex='1'>
-          <Text color='white' fontSize='xl'>
-            Black Mirror season 6 coming on the 15th June!
+          left={["0", "10%", "40%", "10%"]}
+          zIndex='1'
+          p={["2", "4", "6", "0"]}>
+          <Text color='white' fontSize={["7", "md", "15", "xl"]}>
+            Black Mirror season 6 is out now...
             <p></p>
             <Box
               as='button'
               borderRadius='md'
               bg='tomato'
               color='white'
-              px={2}
-              h={10}>
+              px={["0", "2", "2", "2"]}
+              h={["4", "8", "8", "10"]}>
               Find out more
             </Box>
           </Text>

@@ -1,5 +1,17 @@
-import NavBar from "../components/NavBar";
+import { Box, Container, Image } from "@chakra-ui/react";
 
-export default function ComingSoon() {
-  return <div></div>;
-}
+const ComingSoon = () => (
+  <Container h='100%' maxW='100%' position='relative'>
+    <Box h='100%' w='100%'>
+      <Image
+        src='./src/images/bms6.jpg'
+        alt='Descriptive alt text'
+        objectFit='cover'
+        h='100%'
+        w='100%'
+      />
+    </Box>
+  </Container>
+);
+
+export default ComingSoon;

@@ -1,11 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
-import NavBar from "../components/NavBar";
-import { HStack } from "@chakra-ui/react";
+import { HStack, Box, Flex } from "@chakra-ui/react";
 import ColorModeSwitch from "../components/ColorModeSwitch";
 
 export default function RootLayout() {
   return (
-    <div>
+    <Flex direction='column' minHeight='100vh'>
       <HStack
         justifyContent='space-between'
         padding='10px'
@@ -14,9 +13,17 @@ export default function RootLayout() {
         <Link to='/'>Home</Link>
         <Link to='Reviews'>Reviews</Link>
         <Link to='ComingSoon'>Coming Soon</Link>
+
         <ColorModeSwitch />
       </HStack>
-      <Outlet />
-    </div>
+
+      <Flex direction='column' flexGrow='1'>
+        <Outlet />
+      </Flex>
+
+      <Box bg='blackAlpha.800' color='white' p='10px' textAlign='center'>
+        © 2023 BarryReviews
+      </Box>
+    </Flex>
   );
 }
